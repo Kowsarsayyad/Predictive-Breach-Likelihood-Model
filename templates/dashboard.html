@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cyber Breach Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- ================= SIDEBAR ================= -->
+    <div class="sidebar">
+        <h2 class="logo">🔐 CyberAI</h2>
+
+        <div class="user-section">
+            <p>Welcome</p>
+            <h3>{{ user }}</h3>
+        </div>
+
+        <ul class="menu">
+            <li><a href="/dashboard">📊 Dashboard</a></li>
+            <li><a href="#">🛡 Risk Analysis</a></li>
+            <li><a href="#">📁 Reports</a></li>
+        </ul>
+
+        <div class="logout-section">
+            <a href="/logout" class="logout-btn">🚪 Logout</a>
+        </div>
+    </div>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <div class="main-content">
+
+        <h1 class="page-title">Predictive Breach Likelihood Modeling</h1>
+
+        <!-- INPUT CARD -->
+        <div class="card">
+            <h2>🔎 Enter Security Metrics</h2>
+
+            <form method="POST" class="input-grid">
+
+                <input type="number" name="failed_logins" placeholder="Failed Login Attempts" required>
+                <input type="number" name="open_ports" placeholder="Open Ports" required>
+                <input type="number" name="outdated_patches" placeholder="Outdated Patches" required>
+                <input type="number" name="traffic_spike" placeholder="Traffic Spike %" required>
+                <input type="number" name="phishing_reports" placeholder="Phishing Reports" required>
+
+                <button type="submit" class="analyze-btn">Analyze Risk</button>
+
+            </form>
+        </div>
+
+        <!-- RESULT CARD -->
+        {% if prediction %}
+        <div class="card result-card">
+
+            <h2>{{ prediction }}</h2>
+
+            <div class="risk-meter">
+                <div class="risk-fill" style="width: {{ risk }}%"></div>
+            </div>
+
+            <p class="risk-text">Risk Probability: {{ risk }}%</p>
+
+            <div class="advice-box">
+                <h3>Security Recommendation</h3>
+                <p>{{ advice }}</p>
+            </div>
+
+        </div>
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cyber Security Register</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="auth-body">
+
+    <div class="auth-container">
+        <div class="auth-card">
+
+            <h2 class="cyber-title">🔐 CyberAI Registration</h2>
+            <p class="subtitle">Create Secure Account</p>
+
+            <form method="POST">
+
+                <div class="input-group">
+                    <input type="text" name="username" required>
+                    <label>Username</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" name="password" required>
+                    <label>Password</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" name="confirm_password" required>
+                    <label>Confirm Password</label>
+                </div>
+
+                <button type="submit" class="cyber-btn">
+                    Register
+                </button>
+
+            </form>
+
+            <p class="bottom-text">
+                Already have an account?
+                <a href="/login">Login Here</a>
+            </p>
+
+        </div>
+    </div>
+
+</body>
+</html>

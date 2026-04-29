@@ -1,0 +1,173 @@
+/* ================= GLOBAL ================= */
+
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+}
+
+/* ================= LAYOUT ================= */
+
+.dashboard-container {
+    display: flex;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    box-shadow: 4px 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.logo {
+    text-align: center;
+    color: #00f7ff;
+}
+
+.user-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 15px 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: #00f7ff;
+    color: black;
+}
+
+/* Logout at bottom */
+.logout-section {
+    margin-top: auto;
+}
+
+.logout-btn {
+    text-decoration: none;
+    background: crimson;
+    padding: 10px;
+    text-align: center;
+    display: block;
+    border-radius: 8px;
+    color: white;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: red;
+    transform: scale(1.05);
+}
+
+/* ================= MAIN CONTENT ================= */
+
+.main-content {
+    margin-left: 270px;
+    padding: 40px;
+    width: 100%;
+}
+
+.page-title {
+    margin-bottom: 30px;
+    color: #00f7ff;
+}
+
+/* ================= CARDS ================= */
+
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+}
+
+/* ================= FORM ================= */
+
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.input-grid input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.analyze-btn {
+    grid-column: span 2;
+    padding: 12px;
+    background: linear-gradient(90deg, #00f7ff, #0072ff);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.analyze-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00f7ff;
+}
+
+/* ================= RESULT ================= */
+
+.result-card {
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+.risk-meter {
+    height: 20px;
+    background: #333;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.risk-fill {
+    height: 100%;
+    background: linear-gradient(90deg, limegreen, yellow, red);
+    transition: width 0.5s ease-in-out;
+}
+
+.risk-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.advice-box {
+    margin-top: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
